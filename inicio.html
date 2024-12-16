@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEAAV</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<header>
+    <section class="banner">
+        <img src="imagens/logo2.png" alt="Logo da Escola" class="logo"> <br>
+        <h1>Agrupamento de Escolas de Albergaria-a-Velha</h1>
+       
+    </section>
+ 
+    <p>"Preparando gerações para o futuro com qualidade e inovação"</p>
+</header>
+
+<nav>
+   <a href="inicio.html">Inicio</a>
+   <a href="noticias.html">Noticias</a>
+   <a href="galeria.html">Galeria</a>
+</nav>
+
+<main>
+        <section class="destaques">
+        <h2>Últimas Notícias</h2>
+        <ul>
+            <li><a href="noticias.html">Jornal "Sinopse" - AEAAV reconhecido em Projeto Nacional, promovido pelo Jornal Público</a></li>
+            <li><a href="noticias.html">Inauguração do Centro Tecnológico Especializado na área Industrial</a></li>
+            <li><a href="noticias.html">Bebras Bebras – Castor Informático 2024</a></li>
+        </ul>
+    </section>
+
+    <section class="sobre">
+        <h2>Sobre o Agrupamento</h2>
+        <p>O Agrupamento de Escolas de Albergaria-a-Velha é referência em educação e inovação.</p>
+        <a href="sobre.html">Saiba mais</a>
+    </section>
+
+    <section class="carrossel">
+        <div class="carrossel-container">
+            <div class="slide">
+                <img src="imagens/f7.jpg" alt="Imagem 1">
+            </div>
+            <div class="slide">
+                <img src="imagens/f5.jpg" alt="Imagem 2">
+            </div>
+            <div class="slide">
+                <img src="imagens/f6.jpg" alt="Imagem 3">
+            </div>
+            <div class="slide">
+                <img src="imagens/f3.jpg" alt="Imagem 4">
+            </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </section>
+    </main>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const carrosselContainer = document.querySelector('.carrossel-container');
+        let currentIndex = 0;
+    
+        function updateSlidePosition() {
+            carrosselContainer.style.transform = `translateX(-${currentIndex * 100}%)`; 
+        }
+    
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length; 
+            updateSlidePosition(); // Chamada adicionada aqui
+        }
+    
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length; 
+            updateSlidePosition();
+        }
+    
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        setInterval(nextSlide, 5000); 
+    </script>
+    
+<footer>
+    <p>&copy; 2024 - Criado por Andreia Loureiro</p>
+    <p>Contato: <a heref="mailto:andreia@andreia.pt">andreia@andreia.pt</a></p>
+</footer>
+</body>
+</html>
